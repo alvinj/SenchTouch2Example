@@ -22,7 +22,7 @@ Next, the "List Notes" screen:
 
 Finally, the "Add Note" screen:
 
-![The Add Note screen](/doc/screenshots/3-note-add.jpg)
+![The Add Note screen](/docs/screenshots/3-note-add.jpg)
 
 
 Alvin Alexander  
