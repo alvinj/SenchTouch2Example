@@ -1,0 +1,59 @@
+{
+    "name": "SenchaTabPanelDemo",
+    "settings": {},
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch22",
+    "topInstanceFileMap": {
+        "773f09e9-2c14-44ec-a7f1-5703aa4fad07": {
+            "paths": [
+                "metadata/view/MainTabPanel",
+                "app/view/override/MainTabPanel.js",
+                "app/view/MainTabPanel.js"
+            ],
+            "className": "MainTabPanel"
+        },
+        "42bab1ec-377d-4861-99c7-05b807353cbf": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "897e1e4e-1643-4f33-bf4d-821cb4fdb3d5": {
+            "paths": [
+                "metadata/store/NotesStore",
+                "app/store/override/NotesStore.js",
+                "app/store/NotesStore.js"
+            ],
+            "className": "NotesStore"
+        },
+        "5c396c9e-6c71-4166-82fa-4ee24048c1b2": {
+            "paths": [
+                "metadata/model/Note",
+                "app/model/override/Note.js",
+                "app/model/Note.js"
+            ],
+            "className": "Note"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "773f09e9-2c14-44ec-a7f1-5703aa4fad07"
+        ],
+        "store": [
+            "897e1e4e-1643-4f33-bf4d-821cb4fdb3d5"
+        ],
+        "controller": [],
+        "model": [
+            "5c396c9e-6c71-4166-82fa-4ee24048c1b2"
+        ],
+        "resource": [
+            "42bab1ec-377d-4861-99c7-05b807353cbf"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

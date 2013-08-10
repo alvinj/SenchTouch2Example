@@ -1,0 +1,414 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainTabPanel",
+        "designer|initialView": true
+    },
+    "designerId": "773f09e9-2c14-44ec-a7f1-5703aa4fad07",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Notes",
+                "iconCls": "info",
+                "id": "NotesTab",
+                "itemId": "mycontainer",
+                "layout": "card",
+                "scrollable": "vertical"
+            },
+            "designerId": "f5cf01b2-ce03-48f9-ba42-b7913fabde76",
+            "cn": [
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "id": "NotesList",
+                        "itemId": "NotesList",
+                        "minHeight": null,
+                        "emptyText": null,
+                        "store": "NotesStore"
+                    },
+                    "designerId": "566ff356-02b6-4f71-87c7-cf8381d1b8d3",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "implHandler": [
+                                    "<div>{note}</div>"
+                                ],
+                                "designer|displayName": "itemTpl"
+                            },
+                            "designerId": "f264bacd-459f-44e3-8beb-b16589bfd330"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNotesListSelect",
+                                "implHandler": [
+                                    "var notesTab = this.getActiveItem();",
+                                    "var notesDetailPanel = notesTab.down('panel');",
+                                    "notesDetailPanel.setRecord(record);",
+                                    "notesTab.setActiveItem(notesDetailPanel);",
+                                    ""
+                                ],
+                                "name": "select"
+                            },
+                            "designerId": "c0e408dc-ee93-44b7-9dfe-47d80fe33e7c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "NotesDetailPanel",
+                        "itemId": "mypanel"
+                    },
+                    "designerId": "a48a3f73-6e5d-458a-b1ac-6c0fe864d560",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "tpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "implHandler": [
+                                    "<div class=\"title\">{title}</div>",
+                                    "<div class=\"note\">{note}</div>"
+                                ],
+                                "designer|displayName": "tpl"
+                            },
+                            "designerId": "b7890a41-704a-451c-83b6-e97e55bdbfa2"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNotesDetailPanelShow",
+                                "implHandler": [
+                                    "var backButton = Ext.getCmp('backButton');",
+                                    "backButton.show();",
+                                    ""
+                                ],
+                                "name": "show"
+                            },
+                            "designerId": "3717df78-9dbf-44c2-a692-429969314a7e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "NotesForm"
+                    },
+                    "designerId": "4918b0ea-9f04-4912-8bcd-eb565d90c9c4",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "titleTextField",
+                                "label": "Title"
+                            },
+                            "designerId": "35d4d350-2d47-492b-96a1-bdd3bae3d2bf"
+                        },
+                        {
+                            "type": "Ext.field.TextArea",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Note"
+                            },
+                            "designerId": "802b7d48-b1ee-45f4-ac05-7e22bee99efb"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "saveButton",
+                                "itemId": "mybutton2",
+                                "text": "Save"
+                            },
+                            "designerId": "53b008fb-0746-4ca0-9a5d-ab57885327f1",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveButtonTap",
+                                        "implHandler": [
+                                            "var currentTab = this.getActiveItem();",
+                                            "var notesPanel = currentTab.getActiveItem();",
+                                            "var values = notesPanel.getValues();",
+                                            "",
+                                            "var store = Ext.data.StoreManager.lookup('NotesStore');",
+                                            "",
+                                            "if (values.id === null) {",
+                                            "  // add",
+                                            "  var record = Ext.ModelMgr.create(values, 'TabPanelDemo.model.Note'); ",
+                                            "  store.add(record);",
+                                            "} else {",
+                                            "  // edit",
+                                            "  // i don't have an id, this may be a problem",
+                                            "  var record = store.getById(values.id);",
+                                            "  record.set('title', values.title);",
+                                            "  record.set('note', values.note);",
+                                            "} ",
+                                            "",
+                                            "store.sync(); ",
+                                            "notesPanel.reset(); ",
+                                            "currentTab.setActiveItem( 0);",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "f383b9f7-719e-4239-8106-5ee97d37d95e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "cancelButton",
+                                "itemId": "mybutton3",
+                                "text": "Cancel"
+                            },
+                            "designerId": "4c292818-0ea2-45f1-98c9-cc8e2088916a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelButtonTap",
+                                        "implHandler": [
+                                            "var currentTab = this.getActiveItem();",
+                                            "currentTab.setActiveItem(0);",
+                                            ""
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "designerId": "7c7fb54b-58ce-4b20-84c6-b083933e146a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "To-Do",
+                "iconCls": "organize",
+                "id": "ToDoTab"
+            },
+            "designerId": "ec327de1-342b-40b0-ba6e-d55c407054c2"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "URLs",
+                "iconCls": "favorites",
+                "id": "UrlsTab"
+            },
+            "designerId": "048ae681-16bf-4ccf-938e-ede367caeb85"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "designerId": "32460b94-cb13-4d32-91ee-01e020e77402"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "id": "NavToolbar"
+            },
+            "designerId": "06fb44a0-d049-490f-bbcd-0b222879ca89",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "backButton",
+                        "itemId": "mybutton",
+                        "ui": "back",
+                        "text": "Back"
+                    },
+                    "designerId": "6f6a3cc1-0af5-40ef-b5e3-c6043b24b56d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBackButtonTap",
+                                "implHandler": [
+                                    "// get the current tab",
+                                    "var currentTab = this.getActiveItem();",
+                                    "// go to the first item in the tab",
+                                    "currentTab.setActiveItem(0);",
+                                    "button.hide();",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "5b62e7f5-efca-4d61-9898-52dce1478fc6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "fb122c29-d375-4cda-9a36-58614776c830"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "addButton",
+                        "itemId": "mybutton1",
+                        "ui": null,
+                        "text": "Add"
+                    },
+                    "designerId": "17910faa-4d7a-4378-aebf-130df9d9b61f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onAddButtonTap",
+                                "implHandler": [
+                                    "// TODO: copied this from the 'Edit' button code",
+                                    "// needs some changes",
+                                    "var currentTab = this.getActiveItem();",
+                                    "//var notesDetailPanel = currentTab.getActiveItem();",
+                                    "",
+                                    "// 2 == NotesForm?",
+                                    "currentTab.setActiveItem(2);",
+                                    "var notesForm = currentTab.getActiveItem();",
+                                    "//notesForm.setRecord(notesDetailPanel.getRecord());",
+                                    "this.setActiveItem(currentTab);",
+                                    "",
+                                    "// hide this because a Cancel button is used",
+                                    "var backButton = Ext.getCmp('backButton');",
+                                    "backButton.hide();",
+                                    "",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "6e0bbcd7-9b89-4366-a9a1-acff9629aba8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

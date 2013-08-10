@@ -1,0 +1,48 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Note"
+        ],
+        "stores": [
+            "NotesStore"
+        ],
+        "views": [
+            "MainTabPanel"
+        ],
+        "name": "TabPanelDemo"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var NotesStore = Ext.data.StoreManager.lookup('NotesStore');",
+                    "if(NotesStore.getCount() === 0) {",
+                    "    console.log('WE HAVE NO RECORDS'); ",
+                    "    NotesStore.add({title: 'Note 1', note: 'This is Note 1'});",
+                    "    NotesStore.add({title: 'Note 2', note: 'This is Note 2'});",
+                    "    NotesStore.add({title: 'Note 3', note: 'This is Note 3'});",
+                    "    NotesStore.sync();",
+                    "} else { ",
+                    "    console.log('WE HAVE DATA!'); ",
+                    "}",
+                    ""
+                ]
+            },
+            "designerId": "35a1273d-4541-4190-8d9e-01b79a91a240"
+        }
+    ]
+}
